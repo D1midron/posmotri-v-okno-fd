@@ -18,6 +18,7 @@ html {
   background-color: #1b1919;
   display: flex;
   justify-content: center;
+  align-items:center;
 }
 
 h1,
@@ -65,10 +66,8 @@ ol {
 .content {
   display: flex;
   width: 1140px;
-  height: 534px;
   gap: 30px;
   justify-content: center;
-  margin-top: 133px;
 }
 
 .result {
@@ -83,7 +82,7 @@ ol {
 .content__details {
   display: flex;
   flex-direction: column;
-  width: 399px;
+  width: 100%;
   height: 100%;
   gap: 25px;
 }
@@ -95,21 +94,23 @@ ol {
 }
 .search-form__fieldset {
   flex-grow: 1;
+  border: none;
 }
 
-.content__list-container {
+.content__list-container {  
+  padding: 2px;
   display: flex;
   flex-direction: column;
-  height: 534px;
-  gap: 26px;
+  block-size: 298px;
+  gap: 30px;
   overflow-y: scroll;
-  overflow-x: hidden;
   position: relative;
 }
 .result__video-container {
   width: 100%;
-  height: 386px;
+  height: 100%;
   margin-top: 78px;
+  object-position: center;
   object-fit: cover;
   position: relative;
 }
@@ -126,15 +127,15 @@ ol {
 
 .content__list {
   display: flex;
-  gap: 25px;
+  gap: 24px;
   flex-direction: column;
 }
 
 .content__video-card-thumbnail {
-  min-width: 206px;
+  min-width: 194px;
   height: 103px;
   object-fit: cover;
-  object-position: 10px top;  
+  object-position: center;  
 }
 
 .content__video-card-description-container {
@@ -146,6 +147,7 @@ ol {
   font-size: 18px;
   line-height: 100%;
   letter-spacing: 0%;
+  padding-bottom: 5px;
 }
 
 .title {
@@ -166,7 +168,7 @@ ol {
   cursor: pointer;
 }
 .content__video-card-title {
-  max-width: 200px;
+  max-width: 192px;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 30px;
@@ -175,6 +177,8 @@ ol {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 192px;
+  padding-bottom: 5px;
 }
 
 .content__video-card-description {
@@ -182,26 +186,23 @@ ol {
   font-weight: 400;
   font-size: 18px;
   line-height: 16.2px;
-  max-width: 200px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  max-width: 192px;
 }
 
 .search-form__checkbox-list {
   display: flex;
-  gap: 10px;
-}
-.search-form__fieldset {
-  border: none;
+  gap: 15px;
 }
 
 .search-form__label {
   display: flex;
   align-items: center;
   width: fit-content;
-  gap: 10px;
+  gap: 5px;
   cursor: pointer;
 }
 
@@ -229,8 +230,8 @@ ol {
   outline-offset: 2px;
 }
 .search-form__textfield:active {
-  border-left-color: 1px solid #fff;
-  border-right-color: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
 }
 
 .search-form__textfield:focus {
@@ -269,49 +270,51 @@ ol {
   background-color: transparent;
   color: #fff;
   cursor: pointer;
+  min-height: 34px;
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 .search-form__submit-button {
   width: 194px;
-  height: 34px;
   display: flex;
-  align-self: flex-end;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
+  margin-right: 3px;
 }
 
 .more-button {
   width: 100%;
-  height: 34px;
   margin-bottom: 2px;
   display: flex;
-  align-self: flex-end;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
+  
 }
-.search-form__submit-button:active {
+.button:active {
   background-color: #545050;
 }
-.search-form__submit-button:hover {
+.button:hover {
   text-decoration: underline;
 }
-.search-form__submit-button:focus {
+.button:focus {
   outline: 1px #fff solid;
   outline-offset: 2px;
 }
-
-.content__card-link_current:active {
+.content__card-link_current {
+  display: block;
   background-color: #545050;
 }
-.content__card-link_current:hover {
+
+.content__card-link:active {
+  background-color: #545050;
+}
+.content__card-link:hover {
   text-decoration: underline;
 }
-.content__card-link_current:focus {
+.content__card-link:focus {
   outline: none;
 }
-.content__card-link_current:not(:active):focus-visible {
+.content__card-link:not(:active):focus-visible {
   outline: 1px #fff solid;
   outline-offset: 2px;
 }
